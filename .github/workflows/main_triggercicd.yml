@@ -15,7 +15,7 @@ env:
   PYTHON_VERSION: '3.12' # set this to the python version to use (supports 3.6, 3.7, 3.8)
 
 jobs:
-  build:
+build:
     runs-on: ubuntu-latest
     permissions:
       contents: read #This is required for actions/checkout
@@ -35,7 +35,7 @@ jobs:
           source venv/bin/activate
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pips install -r requirements.txt
 
       # Optional: Add step to run tests here
 
@@ -82,4 +82,5 @@ jobs:
           app-name: 'TriggerCICD'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+
           
